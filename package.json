@@ -1,0 +1,17 @@
+{
+	"name": "twitterbot",
+	"title": "This or That Bot",
+	"version": "0.1.0",
+	"description": "A Twitterbot that plays This or That",
+	"author": {
+		"name": "Chris Reynolds",
+		"url": "https://jazzsequence.com"
+	},
+	"license": "GPLv3",
+	"devDependencies": {
+	    "grunt": "latest",
+	    "grunt-contrib-watch": "latest",
+	    "grunt-wp-i18n": "latest",
+	    "load-grunt-tasks": "latest"
+	}
+}

@@ -1,0 +1,17 @@
+{
+  "generator-plugin-wp": {
+    "name": "This or That Bot",
+    "homepage": "https://jazzsequence.com",
+    "description": "A Twitterbot that plays This or That",
+    "version": "0.1.0",
+    "author": "Chris Reynolds",
+    "authoremail": "chris@jazzsequence.com",
+    "authorurl": "https://jazzsequence.com",
+    "license": "GPLv3",
+    "slug": "twitterbot",
+    "classname": "Twitterbot",
+    "classprefix": "T_",
+    "prefix": "twitterbot",
+    "year": 2015
+  }
+}
