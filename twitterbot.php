@@ -34,7 +34,6 @@
  * Built using generator-plugin-wp
  */
 
-
 /**
  * Autoloads files with classes when needed
  *
@@ -148,6 +147,10 @@ class Twitterbot {
 		// $this->admin = new T_Admin( $this );
 		$this->tweet = new Twitterbot_Tweet( $this );
 		$this->reply = new Twitterbot_Reply( $this );
+
+		// Require external libraries
+		require_once( $this->path . 'vendor/cmb2/init.php' );
+		require_once( $this->path . 'vendor/twitteroauth/autoload.php' );
 	}
 
 	/**
