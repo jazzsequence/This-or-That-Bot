@@ -32,6 +32,8 @@ class Twitterbot_Tweet {
 	 * @return  null
 	 */
 	public function hooks() {
+		// hook the tweet action to the set_this_or_that action which is already scheduled for hourly, but do it later
+		add_action( 'twitterbot_set_this_or_that', array( $this, 'maybe_tweet' ), 99 );
 	}
 
 	/**
