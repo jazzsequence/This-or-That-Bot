@@ -38,6 +38,3 @@ class Twitterbot_Reply {
 function twitterbot_reply() {
 	return new Twitterbot_Reply;
 }
-
-// go!
-twitterbot_reply();

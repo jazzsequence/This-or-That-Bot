@@ -38,6 +38,3 @@ class Twitterbot_Tweet {
 function twitterbot_tweet() {
 	return new Twitterbot_Tweet;
 }
-
-// go!
-twitterbot_tweet();
