@@ -161,6 +161,12 @@ class Twitterbot {
 		register_deactivation_hook( __FILE__, array( $this, '_deactivate' ) );
 
 		add_action( 'init', array( $this, 'init' ) );
+
+		if ( ! wp_next_scheduled( 'twitterbot_set_this_or_that' ) ) {
+			wp_schedule_event( time(), 'hourly', 'twitterbot_set_this_or_that' );
+		}
+
+		add_action( 'twitterbot_set_this_or_that', array( $this, 'set_this_or_that' ) );
 	}
 
 	/**
@@ -304,6 +310,31 @@ class Twitterbot {
 		static $url;
 		$url = $url ? $url : trailingslashit( plugin_dir_url( __FILE__ ) );
 		return $url . $path;
+	}
+
+
+	public function set_this_or_that() {
+		$which = rand( 0, 2 );
+		switch ( $which ) {
+			case 0:
+				$result = 'prompt';
+				break;
+
+			case 1:
+				$result = 'this';
+				break;
+
+			case 2:
+				$result = 'that';
+				break;
+
+			default:
+				$result = 'prompt';
+				# code...
+				break;
+		}
+
+		update_option( '_twitterbot_this_or_that', $result );
 	}
 }
 
