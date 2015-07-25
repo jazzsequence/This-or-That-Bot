@@ -312,7 +312,13 @@ class Twitterbot {
 		return $url . $path;
 	}
 
-
+	/**
+	 * Function to define a this or that status. Uses wp_cron and updates hourly(ish). Used to
+	 * determine tweets to send.
+	 *
+	 * @since  0.1.0
+	 * @return void
+	 */
 	public function set_this_or_that() {
 		$which = rand( 0, 2 );
 		switch ( $which ) {
