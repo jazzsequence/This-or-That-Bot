@@ -61,6 +61,23 @@ class Twitterbot_Tweet {
 				break;
 		}
 	}
+
+	/**
+	 * Hooked to the hourly schedule, maybe tweet the current this or that status.
+	 *
+	 * @since  0.1.0
+	 * @return void
+	 */
+	public function maybe_tweet() {
+		$rand = rand( 0, 9 );
+
+		if ( 9 === $rand ) {
+			// do the tweet
+			if ( function_exists( 'twitterbot_get_oauth' ) ) {
+				twitterbot_get_oauth()->post( 'statuses/update', array( 'status' => $this->get_this_or_that() ) );
+			}
+		}
+	}
 }
 
 function twitterbot_tweet() {
