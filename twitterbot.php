@@ -146,6 +146,8 @@ class Twitterbot {
 	function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
 		// $this->admin = new T_Admin( $this );
+		$this->tweet = new Twitterbot_Tweet( $this );
+		$this->reply = new Twitterbot_Reply( $this );
 	}
 
 	/**
